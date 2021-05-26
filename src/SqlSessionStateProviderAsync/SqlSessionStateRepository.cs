@@ -403,11 +403,6 @@ namespace Microsoft.AspNet.SessionState
                 }
                 actions = (SessionStateActions)cmd.GetOutPutParameterValue(SqlParameterName.ActionFlags).Value;
 
-                if (buf == null)
-                {
-                    buf = (byte[])cmd.GetOutPutParameterValue(SqlParameterName.SessionItemLong).Value;
-                }
-
                 return new SessionItem(buf, true, lockAge, lockId, actions);
             }
         }
